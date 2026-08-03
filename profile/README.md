@@ -1,92 +1,27 @@
- # Norvia Labs
+# Norvia Labs
 
-  Static website for **Norvia Labs** (`norvialabs.com`) — an open-source experiment lab site inspired by the visual language of [neullabs.com](https://www.neullabs.com/): dark navy base, blue/violet brand accents, Inter + JetBrains Mono, product cards, and a decision table.
+## Open-source tools for building better AI agents
 
-  ## Stack
+Norvia Labs is a collection of focused experiments for people building, testing, and operating AI agents.
 
-  - Plain HTML, CSS, and JavaScript (no build step)
-  - Portfolio data in `data/experiments.js`
+Each project tackles one practical problem:
 
-  ## Local preview
+- **forge** runs agent tools, loops, and policies with deterministic replays.
+- **guard** adds governance, identity, and execution safety to agent traffic.
+- **contract** turns existing APIs into tool schemas agents can use.
+- **route** reduces prompt cost and latency by pruning unused tool schemas.
+- **audit** records agent actions in a structured, cryptographic ledger.
 
-  From this directory:
+Projects are built in the open, with MIT licensing as they ship, and documented as they develop.
 
-  ```bash
-  python3 -m http.server 5173
+## Find the right experiment
 
-  Open http://localhost:5173 (http://localhost:5173).
+Whether you are prototyping an agent, connecting it to existing systems, or adding controls before it reaches production, start with the [experiment portfolio](https://norvialabs.com/experiments/).
 
-  Or with Node:
+The [GitHub organization](https://github.com/norvialabs) has the source code, issues, and project updates.
 
-  npx serve .
+## Visit Norvia Labs
 
-  ## Customize
-
-   What                    Where
-  ━━━━━━━━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Experiments list        data/experiments.js
-  ──────────────────────  ───────────────────────────────────────────────
-   Contact form backend    data/contact-config.js (Web3Forms access key)
-  ──────────────────────  ───────────────────────────────────────────────
-   Copy & sections         index.html, about/, experiments/, contact/
-  ──────────────────────  ───────────────────────────────────────────────
-   Colors / layout         styles.css
-  ──────────────────────  ───────────────────────────────────────────────
-   GitHub org links        search for github.com/norvialabs
-
-  ### Clean URLs
-
-  Pages live as folders so paths have no .html suffix:
-
-   URL              File
-  ━━━━━━━━━━━━━━━  ━━━━━━━━━━━━━━━━━━━━━━━━
-   /                index.html
-  ───────────────  ────────────────────────
-   /about/          about/index.html
-  ───────────────  ────────────────────────
-   /experiments/    experiments/index.html
-  ───────────────  ────────────────────────
-   /contact/        contact/index.html
-
-  Stub files about.html, contact.html, and experiments.html redirect to the clean paths for old bookmarks.
-
-  ### Contact form (Web3Forms)
-
-  The contact page posts to Web3Forms (https://web3forms.com/) (free: 250 submissions/month).
-
-  1. Create a key at https://web3forms.com/ for your inbox
-  2. Confirm the email
-  3. Put the access key in data/contact-config.js → accessKey
-
-  The public site does not display a direct email address; visitors use /contact/ or GitHub.
-
-  ### Add an experiment
-
-  Append an object to window.NORVIA_EXPERIMENTS in data/experiments.js:
-
-  {
-    id: "my-tool",
-    name: "my-tool",
-    stack: "Rust",
-    status: "queue", // "active" | "queue"
-    description: "One sentence that states the sharp idea.",
-    // Only add when the repo is live — omitted links render as "Coming soon" / disabled queue cards
-    // url: "https://github.com/norvialabs/my-tool",
-    // code: "https://github.com/norvialabs/my-tool",
-  }
-
-  Queue cards are non-interactive until url / code are set. Update decision-table rows in
-  app.js if you want it listed under “If you need this…”.
-
-  ## Deploy
-
-  Any static host works:
-
-  - Cloudflare Pages / Netlify / Vercel: point at this folder, no build command
-  - GitHub Pages: publish the repo root (or /docs if you move files)
-
-  Set the custom domain to norvialabs.com in your host’s DNS settings.
-
-  ## License
-
-  Site markup and styles: use freely for Norvia Labs. Experiment software licenses live in their own repositories (MIT intended).
+- [Explore the experiments](https://norvialabs.com/experiments/)
+- [Read the thesis](https://norvialabs.com/about/)
+- [Get in touch](https://norvialabs.com/contact/)
